@@ -16,7 +16,7 @@ public class Coccodrillo extends Anfibi{
 				);
 
 	}
-	public void abilitaSpeciale(Animale a, boolean turn) {//presaInMorso
+	public void abilitaSpeciale(Animale a, boolean turn) {//presaInMorso se turno == 1 turn resta false e danno non aumena ed energia non diminuisce mentre se turno = 2 si fa la condizione dell'if
 		int x;
 		a.atk = 0;
 		a.vel = 0;

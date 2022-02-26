@@ -14,8 +14,9 @@ public class Serpente extends Anfibi{
 				(Math.random()*(8-5+1)+5), 
 				(int) (Math.random()*(100-30+1)+30)
 				);
+		morsoRapido();
 	}
-	public void veleno(Animale a) {
+	public void abilitaSpeciale(Animale a) {
 		int x;
 		int prob;
 		x = (int) (Math.random()*(10-5+1)+5);
@@ -25,7 +26,7 @@ public class Serpente extends Anfibi{
 			a.hp = 0;
 		}
 	}
-	public void morsoRapido(Animale a) {
+	public void morsoRapido() {
 		int x;
 		x = (int) (Math.random()*(10-5+1)+5);
 		this.atk += x;
