@@ -5,7 +5,7 @@ public abstract class Terreno {
 		this.nome = t;
 	}
 	
-	public void bonus() {
+	public void bonus(Animale a) {
 		
 	}
 }

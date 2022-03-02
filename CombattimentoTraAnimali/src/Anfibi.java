@@ -5,7 +5,7 @@ public abstract class Anfibi extends Animale{
 		super(v, f, h, e, a, d, dan, alt, lar, lun, pes);
 		
 	}
-	public void abilita(Animale Nemico) {
+	public void abilita() {
 		int x;
 		x = (int) (Math.random()*(10-5+1)+5);
 		this.atk += x;
