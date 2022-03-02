@@ -14,6 +14,13 @@ public class Orso extends Predatori{
 				 (Math.random()*(2.8-1.4+1)+1.4), 
 				 (int) (Math.random()*(600-450+1)+450)
 				 );
+		abilita();
 	}
-
+	public void Abilita() {//pelliccia spessa e possanza
+		int x;
+		x = (int) (Math.random()*(20-5+1)+5);
+		this.def += x;
+		x = (int) (Math.random()*(20-5+1)+5);
+		this.For += x;
+	}
 }

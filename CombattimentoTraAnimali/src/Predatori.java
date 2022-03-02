@@ -5,5 +5,9 @@ public abstract class Predatori extends Animale{
 		super(v, f, h, e, a, d, dan, alt, lar, lun, pes);
 		
 	}
-
+	public void Graffio() {
+		int x;
+		x = (int) (Math.random()*(10-5+1)+5);
+		this.dann += x;
+	}
 }

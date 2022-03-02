@@ -17,5 +17,15 @@ public class Leone extends Predatori{
 				 
 	
 	}
-
+	public void Abilita() { //agilita + velocità
+		int x;
+		x = (int) (Math.random()*(10-5+1)+5);
+		this.vel += x;
+	}
+	public void abilitaSpeciale() {	//agguato 2 volte graffio e -1 ener ogni graffio	
+		Graffio();
+		this.ener -= 1;
+		Graffio();
+		this.ener -= 1;
+	}
 }
