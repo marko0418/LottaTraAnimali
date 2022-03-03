@@ -1,8 +1,9 @@
 
 public class Coccodrillo extends Anfibi{
 
-	public Coccodrillo(int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
-		super((int) (Math.random()*(50-40+1)+40), 
+	public Coccodrillo(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+		super("Coccodrillo",
+				(int) (Math.random()*(50-40+1)+40), 
 				(int) (Math.random()*(100-70+1)+70),
 				10,
 				10, 
@@ -18,6 +19,7 @@ public class Coccodrillo extends Anfibi{
 	}
 	public void abilitaSpeciale(Animale a, boolean turn) {//presaInMorso se turno == 1 turn resta false e danno non aumena ed energia non diminuisce mentre se turno = 2 si fa la condizione dell'if
 		int x;
+		System.out.println(this.nome + "usa presa in morso");
 		a.atk = 0;
 		a.vel = 0;
 		if(turn == true) {

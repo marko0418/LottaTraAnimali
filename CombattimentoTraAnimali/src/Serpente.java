@@ -1,8 +1,9 @@
 
 public class Serpente extends Anfibi{
 
-	public Serpente(int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
-		super((int) (Math.random()*(10.6-8+1)+8), 
+	public Serpente(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+		super("Serpente",
+				(int) (Math.random()*(10.6-8+1)+8), 
 				(int) (Math.random()*(100-70+1)+70),
 				10,
 				10, 
@@ -14,7 +15,7 @@ public class Serpente extends Anfibi{
 				(Math.random()*(8-5+1)+5), 
 				(int) (Math.random()*(100-30+1)+30)
 				);
-		morsoRapido();
+		abilitaPassiva();
 	}
 	public void abilitaSpeciale(Animale a) {
 		int x;
@@ -26,8 +27,10 @@ public class Serpente extends Anfibi{
 			a.hp = 0;
 		}
 	}
-	public void morsoRapido() {
+	public void abilitaPasiva() {
+		
 		int x;
+		System.out.println(this.nome + " usa morsoRapido");
 		x = (int) (Math.random()*(10-5+1)+5);
 		this.atk += x;
 	}

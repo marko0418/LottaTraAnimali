@@ -1,8 +1,9 @@
 
 public class Orso extends Predatori{
 
-	public Orso(int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
-		super((int) (Math.random()*(60-45+1)+45), 
+	public Orso(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+		super("Orso", 
+				(int) (Math.random()*(60-45+1)+45), 
 				 (int) (Math.random()*(100-70+1)+70),
 				 10,
 				 10, 
@@ -14,9 +15,9 @@ public class Orso extends Predatori{
 				 (Math.random()*(2.8-1.4+1)+1.4), 
 				 (int) (Math.random()*(600-450+1)+450)
 				 );
-		abilita();
+		abilitaPassiva();
 	}
-	public void Abilita() {//pelliccia spessa e possanza
+	public void abilitaPassiva() {//pelliccia spessa e possanza
 		int x;
 		x = (int) (Math.random()*(20-5+1)+5);
 		this.def += x;

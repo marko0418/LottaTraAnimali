@@ -1,5 +1,6 @@
 
-public abstract class Animale {
+public abstract class Animale { 
+	protected String nome;
 	protected int vel;
 	protected int For;
 	protected int hp;
@@ -11,7 +12,8 @@ public abstract class Animale {
 	protected double larghezza;
 	protected double lunghezza;
 	protected double peso;
-	public Animale(int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+	public Animale(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+		nome = n;
 		vel = v; 
 		For = f; 
 		hp = h;
@@ -27,6 +29,14 @@ public abstract class Animale {
 	
 	
 	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public int getVel() {
 		return vel;
 	}
@@ -98,16 +108,35 @@ public abstract class Animale {
 		this.peso = peso;
 	}
 	
-	public void attacco() {
+	public void attacco(Animale a) {
+		int x;
+		x  = (int) (Math.random()*(20-0+1)+0);
+		if(this.ener > 0) { // controllo se ho energia per attaccare
+			System.out.println("Ha abbastanza energie per attaccare");
+			this.ener -= 1;
+			if(this.atk + this.For + this.vel + x > a.def + a.vel) { // controllo se puo attaccare
+				System.out.print("L'attacco va a segno, gli hp passano da: " + a.hp);
+				a.hp-=(this.dann + this.atk);
+				System.out.println(" a: " + a.hp);
+				
+			}
+		}
+		
 		
 	}
+	
 	public void attaccoSpeciale() {
-		
-	}
-	public void abilita() {
 		
 	}
 	public void abilitaPassiva() {
 		
 	}
+
+
+
+	
+
+
+
+	
 }

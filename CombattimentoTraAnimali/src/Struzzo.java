@@ -2,9 +2,10 @@
 public class Struzzo extends Uccelli{
 
 
-	public Struzzo(int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+	public Struzzo(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
 		
-		super((int) (Math.random()*(100-70+1)+70), 
+		super("Struzzo",
+			 (int) (Math.random()*(100-70+1)+70), 
 			 (int) (Math.random()*(100-70+1)+70),
 			 10,
 			 10, 
@@ -16,10 +17,10 @@ public class Struzzo extends Uccelli{
 			 (Math.random()*(2.2-1.8+1)+1.8), 
 			 (int) (Math.random()*(140-63+1)+63)
 			 );
-		abilita();
+		abilitaPassiva();
 	}
 	
-	public void abilita(Animale Nemico) {//testaSottoLaSabbia
+	public void abilitaPassiva(Animale Nemico) {//testaSottoLaSabbia
 		int x;
 		x = (int) (Math.random()*(20-5+1)+5);
 		this.def+=x;

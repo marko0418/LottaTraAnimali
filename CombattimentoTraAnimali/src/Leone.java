@@ -1,8 +1,9 @@
 
 public class Leone extends Predatori{
 
-	public Leone(int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
-		super((int) (Math.random()*(80-60+1)+60), 
+	public Leone(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+		super("Leone",
+				(int) (Math.random()*(80-60+1)+60), 
 				 (int) (Math.random()*(100-70+1)+70),
 				 10,
 				 10, 
@@ -13,16 +14,17 @@ public class Leone extends Predatori{
 				 (Math.random()*(0.6-0.4+1)+0.4), 
 				 (Math.random()*(1.8-1.6+1)+1.6), 
 				 (int) (Math.random()*(250-150+1)+150)
-				 );
-				 
-	
+				 );	 
+		abilitaPassiva();
 	}
-	public void Abilita() { //agilita + velocità
+	public void abilitaPassiva() { //agilita + velocità
 		int x;
+		System.out.println(this.nome + " usa agilità");
 		x = (int) (Math.random()*(10-5+1)+5);
 		this.vel += x;
 	}
-	public void abilitaSpeciale() {	//agguato 2 volte graffio e -1 ener ogni graffio	
+	public void abilitaSpeciale() {	//agguato 2 volte graffio e -1 ener ogni graffio
+		System.out.println(this.nome + " usa agguato");
 		Graffio();
 		this.ener -= 1;
 		Graffio();

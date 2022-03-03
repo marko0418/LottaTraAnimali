@@ -1,9 +1,10 @@
 
 public class Rapace extends Uccelli{
 
-	public Rapace(int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+	public Rapace(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
 		
-		super((int) (Math.random()*(40-30+1)+30), 
+		super("Rapace",
+				(int) (Math.random()*(40-30+1)+30), 
 			 (int) (Math.random()*(100-70+1)+70),
 			 10,
 			 10, 
@@ -15,7 +16,7 @@ public class Rapace extends Uccelli{
 			 (Math.random()*(0.57-0.51+1)+0.51), 
 			 (int) (Math.random()*(1-0.5+1)+0.5)
 			 );
-		volare();
+		abilitaPassiva();
 	}
 	
 	public void abilitaSpeciale(Animale Nemico) {//picchiata
@@ -25,7 +26,8 @@ public class Rapace extends Uccelli{
 		x = (int) (Math.random()*(2-1+1)+1);
 		this.ener-=x;
 	}
-	public void volare() {
+	public void abilitaPassiva() {
+		//volare
 		int x;
 		x = (int) (Math.random()*(10-5+1)+5);
 		this.vel += x;
