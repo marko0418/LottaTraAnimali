@@ -1,7 +1,7 @@
 
 public class Orso extends Predatori{
 
-	public Orso(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+	public Orso() {
 		super("Orso", 
 				(int) (Math.random()*(60-45+1)+45), 
 				 (int) (Math.random()*(100-70+1)+70),

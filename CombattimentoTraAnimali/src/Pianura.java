@@ -1,7 +1,7 @@
 
 public class Pianura extends Terreno{
 
-	public Pianura(String t) {
+	public Pianura() {
 		super("Pianura");
 		
 	}

@@ -1,7 +1,7 @@
 
 public class Rapace extends Uccelli{
 
-	public Rapace(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+	public Rapace() {
 		
 		super("Rapace",
 				(int) (Math.random()*(40-30+1)+30), 

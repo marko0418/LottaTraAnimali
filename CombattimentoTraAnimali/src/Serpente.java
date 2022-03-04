@@ -1,7 +1,7 @@
 
 public class Serpente extends Anfibi{
 
-	public Serpente(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+	public Serpente() {
 		super("Serpente",
 				(int) (Math.random()*(10.6-8+1)+8), 
 				(int) (Math.random()*(100-70+1)+70),

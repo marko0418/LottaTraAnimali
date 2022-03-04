@@ -1,15 +1,15 @@
 
 public class Coccodrillo extends Anfibi{
 
-	public Coccodrillo(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+	public Coccodrillo() {
 		super("Coccodrillo",
 				(int) (Math.random()*(50-40+1)+40), 
 				(int) (Math.random()*(100-70+1)+70),
 				10,
 				10, 
-				0,
-				0,
-				0,
+				1,
+				1,
+				1,
 				(Math.random()*(0.7-0.5+1)+0.5), 
 				(Math.random()*(1-0.5+1)+0.5),
 				(Math.random()*(7-5+1)+5), 

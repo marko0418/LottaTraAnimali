@@ -110,16 +110,19 @@ public abstract class Animale {
 	
 	public void attacco(Animale a) {
 		int x;
+		
 		x  = (int) (Math.random()*(20-0+1)+0);
 		if(this.ener > 0) { // controllo se ho energia per attaccare
-			System.out.println("Ha abbastanza energie per attaccare");
+			System.out.println(this.nome + " ha abbastanza energie per attaccare: " + this.ener);
 			this.ener -= 1;
 			if(this.atk + this.For + this.vel + x > a.def + a.vel) { // controllo se puo attaccare
-				System.out.print("L'attacco va a segno, gli hp passano da: " + a.hp);
+				System.out.print("L'attacco di " + this.nome + " va a segno, gli hp passano da: " + a.hp);
 				a.hp-=(this.dann + this.atk);
 				System.out.println(" a: " + a.hp);
 				
 			}
+		}else {
+			System.out.println(this.nome + " ha terminato l'energia");
 		}
 		
 		

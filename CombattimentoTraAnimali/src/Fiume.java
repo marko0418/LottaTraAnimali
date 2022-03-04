@@ -1,7 +1,7 @@
 
 public class Fiume extends Terreno{
 
-	public Fiume(String t) {
+	public Fiume() {
 		super("Fiume");
 	}
 	public void bonus(Animale a1) {

@@ -2,14 +2,14 @@
 public class Struzzo extends Uccelli{
 
 
-	public Struzzo(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+	public Struzzo() {
 		
 		super("Struzzo",
 			 (int) (Math.random()*(100-70+1)+70), 
 			 (int) (Math.random()*(100-70+1)+70),
 			 10,
 			 10, 
-			 0,
+			 2,
 			 0,
 			 0,
 			 (Math.random()*(3-2+1)+2), 

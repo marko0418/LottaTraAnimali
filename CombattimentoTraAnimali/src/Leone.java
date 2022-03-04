@@ -1,7 +1,7 @@
 
 public class Leone extends Predatori{
 
-	public Leone(String n, int v, int f, int h, int e, int a, int d, int dan, double alt, double lar, double lun, double pes) {
+	public Leone() {
 		super("Leone",
 				(int) (Math.random()*(80-60+1)+60), 
 				 (int) (Math.random()*(100-70+1)+70),
