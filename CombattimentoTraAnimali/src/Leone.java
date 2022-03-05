@@ -23,11 +23,14 @@ public class Leone extends Predatori{
 		x = (int) (Math.random()*(10-5+1)+5);
 		this.vel += x;
 	}
-	public void abilitaSpeciale() {	//agguato 2 volte graffio e -1 ener ogni graffio
+	public void attaccoSpeciale(Animale a, int turno) {	//agguato 2 volte graffio e -1 ener ogni graffio
 		System.out.println(this.nome + " usa agguato");
-		Graffio();
+		attacco(a);
 		this.ener -= 1;
-		Graffio();
+		attacco(a);
 		this.ener -= 1;
+		System.out.print("L'attacco di " + this.nome + " va a segno, gli hp passano da: " + a.hp);
+		a.hp-=(this.dann + this.atk);
+		System.out.println(" a: " + a.hp);
 	}
 }

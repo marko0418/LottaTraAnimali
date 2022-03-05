@@ -17,7 +17,8 @@ public class Serpente extends Anfibi{
 				);
 		abilitaPassiva();
 	}
-	public void abilitaSpeciale(Animale a) {
+	public void attaccoSpeciale(Animale a, int turno) {
+		System.out.println(this.nome + " usa veleno");
 		int x;
 		int prob;
 		x = (int) (Math.random()*(10-5+1)+5);
@@ -26,9 +27,11 @@ public class Serpente extends Anfibi{
 		if(prob <=5) {
 			a.hp = 0;
 		}
+		System.out.print("L'attacco di " + this.nome + " va a segno, gli hp passano da: " + a.hp);
+		a.hp-=(this.dann + this.atk);
+		System.out.println(" a: " + a.hp);
 	}
-	public void abilitaPasiva() {
-		
+	public void abilitaPassiva() {	
 		int x;
 		System.out.println(this.nome + " usa morsoRapido");
 		x = (int) (Math.random()*(10-5+1)+5);

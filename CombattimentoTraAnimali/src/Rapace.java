@@ -19,12 +19,15 @@ public class Rapace extends Uccelli{
 		abilitaPassiva();
 	}
 	
-	public void abilitaSpeciale(Animale Nemico) {//picchiata
+	public void attaccoSpeciale(Animale a, int turno) {//picchiata
 		int x;
 		x = (int) (Math.random()*(10-5+1)+5);
 		this.dann += x;
 		x = (int) (Math.random()*(2-1+1)+1);
 		this.ener-=x;
+		System.out.print("L'attacco di " + this.nome + " va a segno, gli hp passano da: " + a.hp);
+		a.hp-=(this.dann + this.atk);
+		System.out.println(" a: " + a.hp);
 	}
 	public void abilitaPassiva() {
 		//volare

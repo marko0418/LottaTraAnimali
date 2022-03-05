@@ -128,7 +128,7 @@ public abstract class Animale {
 		
 	}
 	
-	public void attaccoSpeciale() {
+	public void attaccoSpeciale(Animale a, int t) {
 		
 	}
 	public void abilitaPassiva() {

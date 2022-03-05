@@ -7,11 +7,11 @@ public class Struzzo extends Uccelli{
 		super("Struzzo",
 			 (int) (Math.random()*(100-70+1)+70), 
 			 (int) (Math.random()*(100-70+1)+70),
-			 10,
+			 100,
 			 10, 
 			 2,
-			 0,
-			 0,
+			 1,
+			 1,
 			 (Math.random()*(3-2+1)+2), 
 			 (Math.random()*(2-1.5+1)+1.5),
 			 (Math.random()*(2.2-1.8+1)+1.8), 
@@ -21,6 +21,7 @@ public class Struzzo extends Uccelli{
 	}
 	
 	public void abilitaPassiva(Animale Nemico) {//testaSottoLaSabbia
+		System.out.println("Struzzo usa Testa sotto la sabbia");
 		int x;
 		x = (int) (Math.random()*(20-5+1)+5);
 		this.def+=x;
