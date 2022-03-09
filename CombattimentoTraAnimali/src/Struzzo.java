@@ -17,16 +17,19 @@ public class Struzzo extends Uccelli{
 			 (Math.random()*(2.2-1.8+1)+1.8), 
 			 (int) (Math.random()*(140-63+1)+63)
 			 );
-		abilitaPassiva();
+		
 	}
 	
-	public void abilitaPassiva(Animale Nemico) {//testaSottoLaSabbia
+	public void attaccoSpeciale(Animale Nemico, int turn) {//testaSottoLaSabbia
 		System.out.println("Struzzo usa Testa sotto la sabbia");
 		int x;
 		x = (int) (Math.random()*(20-5+1)+5);
 		this.def+=x;
+		System.out.println("Difesa di Struzzo aumenta");
 		x = (int) (Math.random()*(100-0+1)+0);
+		this.ener --;
 		if(this.ener<10 && x<=50) {
+			System.out.println("Struzzo recupera un punto di energia");
 			this.ener+=1;
 		}
 	}

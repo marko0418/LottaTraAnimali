@@ -19,18 +19,20 @@ public class Leone extends Predatori{
 	}
 	public void abilitaPassiva() { //agilita + velocità
 		int x;
-		System.out.println(this.nome + " usa agilità");
 		x = (int) (Math.random()*(10-5+1)+5);
 		this.vel += x;
 	}
 	public void attaccoSpeciale(Animale a, int turno) {	//agguato 2 volte graffio e -1 ener ogni graffio
-		System.out.println(this.nome + " usa agguato");
+		
+		System.out.println(this.nome + " usa agguato, userà due volte graffio");
 		attacco(a);
-		this.ener -= 1;
-		attacco(a);
-		this.ener -= 1;
-		System.out.print("L'attacco di " + this.nome + " va a segno, gli hp passano da: " + a.hp);
-		a.hp-=(this.dann + this.atk);
-		System.out.println(" a: " + a.hp);
+		System.out.println();
+		if(a.hp != 0 && this.ener>0) {
+			attacco(a);
+		}
+		if(this.ener <= 0 && a.hp > 0) {
+			System.out.println(this.nome + " ha terminato l'energia");
+		}
+		
 	}
 }

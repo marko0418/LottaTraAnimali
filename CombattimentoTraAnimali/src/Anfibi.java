@@ -5,7 +5,5 @@ public abstract class Anfibi extends Animale{
 		super(n, v, f, h, e, a, d, dan, alt, lar, lun, pes);
 		
 	}
-	public void abilita() {
-		
-	}
+	
 }

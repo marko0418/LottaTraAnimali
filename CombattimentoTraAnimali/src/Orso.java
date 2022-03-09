@@ -9,7 +9,7 @@ public class Orso extends Predatori{
 				 10, 
 				 75,
 				 55,
-				 1100,
+				 100,
 				 (Math.random()*(1.5-0.7+1)+0.7), 
 				 (Math.random()*(0.8-1.2+1)+0.8), 
 				 (Math.random()*(2.8-1.4+1)+1.4), 

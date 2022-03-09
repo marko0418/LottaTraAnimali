@@ -12,5 +12,6 @@ public abstract class Uccelli extends Animale{
 		System.out.print("L'attacco di " + this.nome + " va a segno, gli hp passano da: " + a.hp);
 		a.hp-=(this.dann + this.atk);
 		System.out.println(" a: " + a.hp);
+		this.ener --;
 	}
 }

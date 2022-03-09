@@ -4,7 +4,7 @@ public class Rapace extends Uccelli{
 	public Rapace() {
 		
 		super("Rapace",
-			 (int) (Math.random()*(40-30+1)+30), 
+			 (int) (Math.random()*(60-30+1)+30), 
 			 30,
 			 1000,
 			 10, 
@@ -23,8 +23,7 @@ public class Rapace extends Uccelli{
 		int x;
 		x = (int) (Math.random()*(10-5+1)+5);
 		this.dann += x;
-		x = (int) (Math.random()*(2-1+1)+1);
-		this.ener-=x;
+		this.ener-=1;
 		System.out.print("L'attacco di " + this.nome + " va a segno, gli hp passano da: " + a.hp);
 		a.hp-=(this.dann + this.atk);
 		if(a.hp<0) {
