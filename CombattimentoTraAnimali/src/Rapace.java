@@ -6,7 +6,7 @@ public class Rapace extends Uccelli{
 		super("Rapace",
 			 (int) (Math.random()*(40-30+1)+30), 
 			 30,
-			 100,
+			 1000,
 			 10, 
 			 30,
 			 100,
@@ -27,6 +27,9 @@ public class Rapace extends Uccelli{
 		this.ener-=x;
 		System.out.print("L'attacco di " + this.nome + " va a segno, gli hp passano da: " + a.hp);
 		a.hp-=(this.dann + this.atk);
+		if(a.hp<0) {
+			a.hp = 0;
+		}
 		System.out.println(" a: " + a.hp);
 	}
 	public void abilitaPassiva() {

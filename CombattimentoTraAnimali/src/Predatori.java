@@ -12,6 +12,9 @@ public abstract class Predatori extends Animale{
 		this.dann += x;
 		System.out.print("L'attacco di " + this.nome + " va a segno, gli hp passano da: " + a.hp);
 		a.hp-=(this.dann + this.atk);
+		if(a.hp<0) {
+			a.hp = 0;
+		}
 		System.out.println(" a: " + a.hp);
 	}
 }

@@ -7,7 +7,7 @@ public class Struzzo extends Uccelli{
 		super("Struzzo",
 			 (int) (Math.random()*(100-70+1)+70), 
 			 38,
-			 100,
+			 1000,
 			 10, 
 			 22,
 			 60,

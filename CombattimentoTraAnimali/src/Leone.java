@@ -5,7 +5,7 @@ public class Leone extends Predatori{
 		super("Leone",
 				(int) (Math.random()*(80-60+1)+60), 
 				 100,
-				 100,
+				 1000,
 				 10, 
 				 55,
 				 75,

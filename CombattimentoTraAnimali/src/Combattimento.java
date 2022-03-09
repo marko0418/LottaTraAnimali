@@ -25,6 +25,7 @@ public class Combattimento {
 	public void scontro(Animale a1, Animale a2, Terreno t1) {
 		int turn = 0;
 		int presa = 0;
+		int presa1 = 0;
 		int k = 0;
 		int v1 = 0;
 		int d1 = 0;
@@ -41,7 +42,11 @@ public class Combattimento {
 			if((a1.hp <= 0 || a2.hp <= 0) || (a1.ener <= 0 || a2.ener <= 0)) {
 				vittoria = true;
 			}else {
-				k = 2;
+				if(a1.nome == "Orso" || a1.nome == "Struzzo") {
+					k = 1;
+				}else {
+					k = (int) (Math.random()*(2-1+1)+1);
+				}
 				switch(k) {
 				case 1:
 					a1.attacco(a2);
@@ -52,13 +57,16 @@ public class Combattimento {
 					}else {
 						if(a1.nome == "Coccodrillo") {
 							if(presa == 0) {
+								
 								v1 = a2.vel;
 								d1 = a2.def;
+								a1.attaccoSpeciale(a2, presa);
 								presa ++;
-							}else {
+							}else if(presa == 1){
 								a1.attaccoSpeciale(a2, presa);
 								a2.vel = v1;
 								a2.def = d1;
+								presa --;
 							}
 							
 						}else {
@@ -75,13 +83,40 @@ public class Combattimento {
 			if((a1.hp <= 0 || a2.hp <= 0) || (a1.ener <= 0 || a2.ener <= 0)) {
 				vittoria = true;
 			}else {
-				k = (int) (Math.random()*(2-1+1)+1);
+				if(a2.nome == "Orso" || a2.nome == "Struzzo") {
+					k = 1;
+				}else {
+					k = (int) (Math.random()*(2-1+1)+1);
+				}
+				
 				switch(k) {
 				case 1:
 					a2.attacco(a1);
 					break;
 				case 2:
-					a2.attaccoSpeciale(a1, turn);
+					if(turn==0) {
+						turn++;
+					}else {
+						if(a2.nome == "Coccodrillo") {
+							if(presa1 == 0) {
+								
+								v2 = a1.vel;
+								d2 = a1.def;
+								a2.attaccoSpeciale(a1, presa);
+								presa1 ++;
+							}else if(presa1 == 1){
+								a2.attaccoSpeciale(a1, presa);
+								a1.vel = v2;
+								a1.def = d2;
+								presa1 --;
+							}
+							
+						}else {
+							a2.attaccoSpeciale(a1, presa);
+						}
+						
+						
+					}
 					break;
 				default:
 						
