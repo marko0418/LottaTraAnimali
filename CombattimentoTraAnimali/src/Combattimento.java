@@ -58,6 +58,37 @@ public class Combattimento {
 		}
 		
 	}
+	public void storyTelling(Animale a, Animale b, Terreno t) {
+		System.out.println("~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~");
+		System.out.println("Stiamo per assistere ad una lotta tra due animali, un " + a.nome + " contro un " + b.nome);
+		System.out.println("Questa lotta stabilità chi è l'animale più forte di tutto il regno animale!");		
+		System.out.println("~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~");
+		System.out.println("\n");
+
+	}
+	public void gabbia(Animale a) {
+		int volumeG = 64;
+		double volumeA;
+		int pesoG = 9000;
+		double pesoA;
+		double vT = 0;
+		double pT = 0;
+		int nA = 0;
+		boolean pieno = false;
+		do {
+			volumeA = a.altezza * a.lunghezza * a.larghezza;
+			pesoA = a.peso;
+			if((volumeA+vT<=volumeG) && (pesoA+pT<=pesoG)) {
+				vT += volumeA;
+				pT += pesoA;
+				nA++;
+			}else {
+				pieno = true;
+			}
+
+		}while(pieno == false);
+		System.out.println("La gabbia contiene un numero totale di: " + nA + " " + a.nome);
+	}
 	
 	public void scontro(Animale a1, Animale a2, Terreno t1) {
 		int turn = 1;
@@ -73,12 +104,12 @@ public class Combattimento {
 			if(turn == 1) {
 				t1.bonus(a1);
 				t1.bonus(a2);		
-				System.out.println("\n~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~\n");
+				System.out.println("\n~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~\n");
 				
 				System.out.println("Energia " + a1.nome + ": " + a1.ener);
 				System.out.println("Energia " + a2.nome + ": " + a2.ener);
 				System.out.println("Terreno " + t1.nome );
-				System.out.println("\n~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~\n");
+				System.out.println("\n~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~\n");
 			}
 			
 			if((a1.hp <= 0 || a2.hp <= 0) || (a1.ener <= 0 || a2.ener <= 0)) {
@@ -168,7 +199,7 @@ public class Combattimento {
 				}
 				
 			}
-			if(a1.hp<=0 || a2.hp <=0) {
+			if((a1.hp<=0 || a2.hp <=0) || a1.ener <= 0 || a2.ener <= 0) {
 				
 			}else {
 				System.out.println("Energia " + a1.nome + ": " + a1.ener);
@@ -176,38 +207,35 @@ public class Combattimento {
 				if(a1.ener <= 0 || a2.ener <= 0) {
 					
 				}else {
-					System.out.println("\n~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~\n");
+					System.out.println("\n~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~\n");
 				}
 				
 
 			}
 			turn++;	
 		}while(vittoria == false);
-		System.out.println("\n~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~\n");
+		System.out.println("\n~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~~x~\n");
 		if(a1.hp<=0) {
-			System.out.println(a2.nome + " vince l'incontro");
+			System.out.println(a2.nome + " vince l'incontro, è l'animale più forte di tutto il regno Animale!!!");
 		}else if(a2.hp<=0){
-			System.out.println(a1.nome + " vince l'incontro");
+			System.out.println(a1.nome + " vince l'incontro, è l'animale più forte di tutto il regno Animale!!!");
 		}else {
 			
 			if(a1.ener<=0 || a2.ener <= 0) {
 				if(a1 instanceof Predatori) {
-					System.out.println(a2.nome + " vince l'incontro");
+					System.out.println(a2.nome + " vince l'incontro, è l'animale più forte di tutto il regno Animale!!!");
 				}else if(a2 instanceof Predatori) {
-					System.out.println(a1.nome + " vince l'incontro");
+					System.out.println(a1.nome + " vince l'incontro, è l'animale più forte di tutto il regno Animale!!!");
 				}else {
 					if(a1.hp < a2.hp) {
 						System.out.println(a2.nome + " ha più hp di " + a1.nome);
-						System.out.println(a2.nome + " vince l'incontro");
+						System.out.println(a2.nome + " vince l'incontro, è l'animale più forte di tutto il regno Animale!!!");
 					}else {
 						System.out.println(a1.nome + " ha più hp di " + a2.nome);
-						System.out.println(a1.nome + " vince l'incontro");
+						System.out.println(a1.nome + " vince l'incontro, è l'animale più forte di tutto il regno Animale!!!");
 					}
 				}
 			}
 		}
-		
-		
 	}
-	
 }

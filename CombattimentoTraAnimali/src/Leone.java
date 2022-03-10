@@ -24,9 +24,8 @@ public class Leone extends Predatori{
 	}
 	public void attaccoSpeciale(Animale a, int turno) {	//agguato 2 volte graffio e -1 ener ogni graffio
 		
-		System.out.println(this.nome + " usa agguato, userà due volte graffio");
+		System.out.println("-" + this.nome + " usa agguato, userà due volte graffio");
 		attacco(a);
-		System.out.println();
 		if(a.hp != 0 && this.ener>0) {
 			attacco(a);
 		}

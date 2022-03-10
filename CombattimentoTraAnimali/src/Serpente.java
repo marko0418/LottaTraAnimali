@@ -10,8 +10,8 @@ public class Serpente extends Anfibi{
 				42,
 				42,
 				42,
-				(Math.random()*(40-20+1)+20), 
-				(Math.random()*(40-20+1)+20), 
+				(Math.random()*(0.40-0.20+1)+0.20), 
+				(Math.random()*(0.40-0.20+1)+0.20), 
 				(Math.random()*(8-5+1)+5), 
 				(int) (Math.random()*(100-30+1)+30)
 				);
